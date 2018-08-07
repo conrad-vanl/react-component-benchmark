@@ -6,13 +6,6 @@ import { getMean, getMedian, getStdDev } from './math';
 
 import type { BenchResultsType, FullSampleTimingType, SampleTimingType } from './types';
 
-const styles = {
-  content: {
-    position: 'absolute',
-    left: '-999em'
-  }
-};
-
 const emptyObject = {};
 
 const shouldRender = (cycle: number, type: $Values<typeof BenchmarkType>): boolean => {
@@ -140,9 +133,7 @@ export default class Benchmark extends Component<BenchmarkPropsType, BenchmarkSt
     }
 
     return running && shouldRender(cycle, type) ? (
-      <div style={styles.content}>
-        <Component {...componentProps} />
-      </div>
+      <Component {...componentProps} />
     ) : null;
   }
 
